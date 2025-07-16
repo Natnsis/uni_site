@@ -26,7 +26,7 @@ const WelcomeHeader = () => {
         </Link>
         <Link href="/">How it works</Link>
       </div>
-      <div>
+      <div className="flex items-center">
         <Button className="rounded-full bg-green-400">Get the app</Button>
       </div>
     </div>
