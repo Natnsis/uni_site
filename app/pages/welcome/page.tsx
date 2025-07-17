@@ -39,6 +39,7 @@ const page = () => {
           />
         </div>
       </div>
+      <p className="text-center text-gray-400 "> copy right &copy; 2025 </p>
     </main>
   );
 };

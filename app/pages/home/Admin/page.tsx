@@ -10,8 +10,42 @@ import {
   Settings,
 } from "lucide-react";
 import Image from "next/image";
+import { columns, Payment } from "./columns";
+import { DataTable } from "./data-table";
 
-const Home = () => {
+async function getData(): Promise<Payment[]> {
+  // Fetch data from your API here.
+  return [
+    {
+      id: "728ed52f",
+      amount: 100,
+      status: "pending",
+      email: "m@example.com",
+    },
+    {
+      id: "728ed52f",
+      amount: 100,
+      status: "pending",
+      email: "m@example.com",
+    },
+    {
+      id: "728ed52f",
+      amount: 100,
+      status: "pending",
+      email: "m@example.com",
+    },
+    {
+      id: "728ed52f",
+      amount: 100,
+      status: "pending",
+      email: "m@example.com",
+    },
+    // ...
+  ];
+}
+
+const Home = async () => {
+  const data = await getData();
   return (
     <main className="bg-white h-screen ">
       <div className="p-5 flex w-screen h-full space-x-5">
@@ -160,12 +194,8 @@ const Home = () => {
           </div>
 
           {/* inner divions */}
-          <div className="my-5 h-full flex gap-5 ">
-            <div className="bg-white h-full w-full p-5">hehe</div>
-            <div className="bg-red-200 w-full p-5 space-y-3">
-              <div className="bg-black h-1/2">bahaha</div>
-              <div className="bg-white h-1/2">mehehehe</div>
-            </div>
+          <div className="container mx-auto py-10">
+            <DataTable columns={columns} data={data} />
           </div>
         </div>
       </div>
