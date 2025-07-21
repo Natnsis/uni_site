@@ -5,7 +5,11 @@ import {
   CalendarCheck,
   ChartNoAxesCombined,
   House,
+  Images,
   Newspaper,
+  NotepadText,
+  RollerCoaster,
+  Usb,
   User,
 } from "lucide-react";
 
@@ -37,19 +41,19 @@ const SideBar = () => {
       </Link>
       <Link href="/dashboard/curriculums">
         <Button variant="ghost" className="flex justify-start py-5 ">
-          <ChartNoAxesCombined />
+          <NotepadText />
           Curriculum
         </Button>
       </Link>
       <Link href="/dashboard/gallery">
         <Button variant="ghost" className="flex justify-start py-5 ">
-          <ChartNoAxesCombined />
+          <Images />
           Gallery
         </Button>
       </Link>
       <Link href="/dashboard/lounges">
         <Button variant="ghost" className="flex justify-start py-5 ">
-          <ChartNoAxesCombined />
+          <RollerCoaster />
           Lounges
         </Button>
       </Link>
@@ -61,7 +65,7 @@ const SideBar = () => {
       </Link>
       <Link href="/dashboard/about">
         <Button variant="ghost" className="flex justify-start py-5 ">
-          <User />
+          <Usb />
           About
         </Button>
       </Link>

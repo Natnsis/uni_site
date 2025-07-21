@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Asu Student Assistant",
   description: "created and used by asu students",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
