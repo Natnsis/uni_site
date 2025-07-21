@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Trash } from "lucide-react";
+import { Pencil, Trash } from "lucide-react";
 import React from "react";
 
 type newsItem = {
@@ -44,9 +44,11 @@ const page = () => {
               <div key={index} className="flex-col flex gap-5">
                 <Card className="mb-3 p-3">
                   <div className="w-full flex gap-2">
-                    <div className="w-6/8">
-                      <h1>{item.title}</h1>
-                      <h2>{item.postedBy}</h2>
+                    <div className="w-6/8 space-y-3">
+                      <h1 className="text-xl font-bold ">{item.title}</h1>
+                      <h2 className="text-xs text-gray-600">
+                        Posted by: {item.postedBy}
+                      </h2>
                       <p>{item.description}</p>
                     </div>
                     <div className="w-2/8 flex items-center gap-3 justify-end">
@@ -59,12 +61,16 @@ const page = () => {
                       <Button variant="secondary">
                         <Trash />
                       </Button>
+                      <Button variant="secondary">
+                        <Pencil />
+                      </Button>
                     </div>
                   </div>
                 </Card>
               </div>
             ))}
           </div>
+          <Button className="sticky bottom-5 z-50">Create New Post</Button>
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
+import { CafeTable } from "@/components/CafeTable";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 const page = () => {
@@ -8,8 +10,12 @@ const page = () => {
       <div className="flex w-full">
         <SideBar />
         <div className="w-4/5 p-5">
-          <Header title="Schedules" />
+          <Header title="Cafeteria Schedule" />
+          <CafeTable />
         </div>
+        <Button className="absolute right-5 bottom-5 z-50">
+          Add New Schedule
+        </Button>
       </div>
     </div>
   );
