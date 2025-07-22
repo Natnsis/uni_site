@@ -5,12 +5,9 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import { redirect } from "next/navigation";
+import Link from "next/link";
 
 const page = () => {
-  const loginHandler = () => {
-    return redirect("./auth/signIn");
-  };
   return (
     <main>
       <WelcomeHeader />
@@ -22,8 +19,8 @@ const page = () => {
             University Students Management Platform
           </p>
           <div className="flex items-center mt-20 gap-5">
-            <Button variant="secondary" size="lg" onClick={loginHandler}>
-              Login
+            <Button variant="secondary" size="lg">
+              <Link href="/dashboard">Login</Link>
             </Button>
             <Button variant="outline" size="lg">
               <Play /> watch demo
