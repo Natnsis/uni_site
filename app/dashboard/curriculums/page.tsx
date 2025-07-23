@@ -1,5 +1,7 @@
+import { CurriculumTable } from "@/components/CurriculumTable";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 const page = () => {
@@ -9,7 +11,10 @@ const page = () => {
         <SideBar />
         <div className="w-4/5 p-5">
           <Header title="Curriculums" />
-          
+          <div>
+            <CurriculumTable />
+          </div>
+          <Button className="sticky bottom-5">Add Curriculum</Button>
         </div>
       </div>
     </div>

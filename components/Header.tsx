@@ -1,16 +1,14 @@
+"use client";
 import React from "react";
 import { ModeToggle } from "./ModeToggle";
-import { Bell, CircleUserRound } from "lucide-react";
-import { UserButton } from "@stackframe/stack";
-import { getUserDetails } from "@/actions/user.action";
-import { stackServerApp } from "@/stack";
+import { Bell } from "lucide-react";
+import { UserButton, useUser } from "@stackframe/stack";
 
 type props = {
   title: String;
 };
-const Header = async ({ title }: props) => {
-  const user = stackServerApp.getUser();
-  const userProfile = await getUserDetails(user?.id);
+const Header = ({ title }: props) => {
+  const user = useUser();
   return (
     <div className="w-full flex justify-between items-center mb-5">
       <div>
@@ -18,11 +16,9 @@ const Header = async ({ title }: props) => {
       </div>
       <div className="flex gap-8 items-center">
         <ModeToggle />
-        {userProfile?.name && (
-          <span className="text-[14px] text-gray-600 dark:text-gray-300">{`Hello!, ${userProfile.name.split(
-            " "[0]
-          )}`}</span>
-        )}
+        {user
+          ? `Hello, ${user.displayName ?? "anon"}`
+          : "You are not logged in"}
         <Bell />
         <UserButton />
       </div>

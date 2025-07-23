@@ -9,6 +9,7 @@ const page = () => {
         <SideBar />
         <div className="w-4/5 p-5">
           <Header title="Lounges" />
+          <div>halo</div>
         </div>
       </div>
     </div>

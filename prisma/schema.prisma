@@ -13,3 +13,88 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id            String   @id @default(cuid())
+  name          String?
+  email         String?  @unique
+  image         String?
+  role          Role     @default(STUDENT)
+  news          News[]   @relation("NewsAuthor")
+  schedules     Schedule[]
+  curriculums   Curriculum[]
+  galleries     Gallery[]
+  lounges     Lounge[]  @relation("UserLounge")
+  createdAt     DateTime @default(now())
+}
+
+enum Role {
+  ADMIN
+  REP
+  STUDENT
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  published   Boolean  @default(true)
+  author      User     @relation("NewsAuthor", fields: [authorId], references: [id])
+  authorId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Schedule {
+  id          String   @id @default(cuid())
+  department  String
+  year        Int
+  fileUrl     String  
+  uploadedBy  User     @relation(fields: [userId], references: [id])
+  userId      String
+  createdAt   DateTime @default(now())
+}
+
+model Curriculum {
+  id          String   @id @default(cuid())
+  department  String
+  year        Int
+  fileUrl     String
+  uploadedBy  User     @relation(fields: [userId], references: [id])
+  userId      String
+  createdAt   DateTime @default(now())
+}
+
+model Gallery {
+  id          String   @id @default(cuid())
+  imageUrl    String
+  caption     String?
+  uploadedBy  User     @relation(fields: [userId], references: [id])
+  userId      String
+  createdAt   DateTime @default(now())
+}
+
+model Lounge {
+  id           String   @id @default(cuid())
+  name         String                 
+  description  String    
+  imageUrl     String?          
+  averageTemp  Float?       
+  capacity     Int?              
+  location     String?               
+  socialLink   String?        
+  createdBy    User     @relation("UserLounge", fields: [userId], references: [id])
+  userId       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+
+model About {
+  id        String   @id @default(cuid())
+  section   String  
+  content   String   
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+

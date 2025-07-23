@@ -3,7 +3,6 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import {
   CalendarCheck,
-  ChartNoAxesCombined,
   House,
   Images,
   Newspaper,
@@ -55,12 +54,6 @@ const SideBar = () => {
         <Button variant="ghost" className="flex justify-start py-5 ">
           <RollerCoaster />
           Lounges
-        </Button>
-      </Link>
-      <Link href="/dashboard/representatives">
-        <Button variant="ghost" className="flex justify-start py-5 ">
-          <User />
-          Representatives
         </Button>
       </Link>
       <Link href="/dashboard/about">
