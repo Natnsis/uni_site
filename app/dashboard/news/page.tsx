@@ -3,6 +3,7 @@ import SideBar from "@/components/SideBar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Pencil, Trash } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 type newsItem = {
@@ -70,7 +71,9 @@ const page = () => {
               </div>
             ))}
           </div>
-          <Button className="sticky bottom-5 z-50">Create New Post</Button>
+          <Link href="/Inner/news">
+            <Button className="sticky bottom-5 z-50">Create New Post</Button>
+          </Link>
         </div>
       </div>
     </div>

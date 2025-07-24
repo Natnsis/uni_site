@@ -2,6 +2,7 @@ import { CafeTable } from "@/components/CafeTable";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
@@ -13,9 +14,11 @@ const page = () => {
           <Header title="Cafeteria Schedule" />
           <CafeTable />
         </div>
-        <Button className="absolute right-5 bottom-5 z-50">
-          Add New Schedule
-        </Button>
+        <Link href="/Inner/schedule">
+          <Button className="absolute right-5 bottom-5 z-50">
+            Add New Schedule
+          </Button>
+        </Link>
       </div>
     </div>
   );

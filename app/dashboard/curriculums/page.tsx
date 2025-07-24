@@ -2,6 +2,7 @@ import { CurriculumTable } from "@/components/CurriculumTable";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
@@ -14,7 +15,9 @@ const page = () => {
           <div>
             <CurriculumTable />
           </div>
-          <Button className="sticky bottom-5">Add Curriculum</Button>
+          <Link href="/Inner/curriculum">
+            <Button className="sticky bottom-5">Add Curriculum</Button>
+          </Link>
         </div>
       </div>
     </div>
