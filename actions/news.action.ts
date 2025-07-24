@@ -44,3 +44,29 @@ export async function deleteNews(id: string) {
     return { success: false, error: "Failed to delete news" };
   }
 }
+
+export async function getNewsById(id: string) {
+  try {
+    const news = await prisma.news.findUnique({
+      where: { id },
+    });
+    return { success: true, news };
+  } catch (error) {
+    return { success: false, error: "Failed to fetch news item" };
+  }
+}
+
+export async function updateNews(
+  id: string,
+  data: { title?: string; content?: string; published?: boolean }
+) {
+  try {
+    const updated = await prisma.news.update({
+      where: { id },
+      data,
+    });
+    return { success: true, news: updated };
+  } catch (error) {
+    return { success: false, error: "Failed to update news" };
+  }
+}

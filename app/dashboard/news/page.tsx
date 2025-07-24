@@ -44,9 +44,12 @@ const Page = async () => {
                             <Trash />
                           </Button>
                         </form>
-                        <Button variant="secondary">
-                          <Pencil />
-                        </Button>
+
+                        <Link href={`/dashboard/news/${item.id}/edit`}>
+                          <Button variant="secondary">
+                            <Pencil />
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </Card>
