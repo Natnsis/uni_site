@@ -32,3 +32,31 @@ export async function fetchSchedule() {
     console.log("error fetching schedule", e);
   }
 }
+
+interface UpdateScheduleParams {
+  id: string;
+  food: string;
+}
+export async function updateSchedule(id: string, data: { food?: string }) {
+  try {
+    const updated = await prisma.schedule.update({
+      where: { id },
+      data,
+    });
+    return { success: true, schedule: updated };
+  } catch (error) {
+    return { success: false, error: "Failed to update news" };
+  }
+}
+
+export async function fetchScheduleById(id: string) {
+  try {
+    const schedule = await prisma.schedule.findUnique({
+      where: { id },
+    });
+    return { success: true, schedule };
+  } catch (e) {
+    console.log("error fetching schedule by id", e);
+    return { success: false };
+  }
+}

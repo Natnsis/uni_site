@@ -1,4 +1,3 @@
-
 import { CafeTable } from "@/components/CafeTable";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
@@ -15,7 +14,7 @@ const page = () => {
           <Header title="Cafeteria Schedule" />
           <CafeTable />
         </div>
-        <Link href="/Inner/schedule">
+        <Link href="/Inner/schedule/update">
           <Button className="absolute right-5 bottom-5 z-50">
             Update Schedule
           </Button>
