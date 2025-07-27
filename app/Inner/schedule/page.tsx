@@ -1,5 +1,6 @@
 "use client";
 
+import { createSchedule } from "@/actions/schedule.action";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -22,11 +23,20 @@ const page = () => {
   const [day, setDay] = useState<String>("");
   const [time, setTime] = useState<String>("");
 
-  const handleScheduleSubmit = () => {};
-
-  useEffect(() => {
-    console.log(food, day, time);
-  }, [food, day, time]);
+  const handleScheduleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!food || !day || !time) {
+      alert("Please fill all fields");
+      return;
+    }
+    const response = await createSchedule({ day, time, food });
+    if (response.success) {
+      alert("schedule added successfully");
+      setFood("");
+      setDay("");
+      setTime("");
+    }
+  };
 
   return (
     <div className="h-screen flex justify-center items-center">
@@ -103,6 +113,9 @@ const page = () => {
               </SelectContent>
             </Select>
           </div>
+          <Button type="submit" className="w-full">
+            Submit
+          </Button>
         </form>
       </Card>
     </div>
