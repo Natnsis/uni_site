@@ -71,7 +71,6 @@ model Lounge {
 
 model About {
   id        String   @id @default(cuid())
-  section   String  
   content   String   
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
