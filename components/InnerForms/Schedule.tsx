@@ -1,5 +1,4 @@
 import React from "react";
-import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { Input } from "../ui/input";
@@ -12,7 +11,7 @@ import {
   TableRow,
 } from "../ui/table";
 
-const Schedule = () => {
+const Schedule = async () => {
   return (
     <div className="p-10 w-[80%] h-screen">
       <div className="flex w-full justify-end">
@@ -21,9 +20,9 @@ const Schedule = () => {
         </Link>
       </div>
       <h1 className="text-lg text-center font-extrabold">
-        Post Cafeteria Schedule
+        Press the food you want to change
       </h1>
-      <div>
+      <div className="mt-5">
         <Table>
           <TableHeader>
             <TableRow>
@@ -36,104 +35,145 @@ const Schedule = () => {
           <TableBody>
             <TableRow>
               <TableCell className="capitalize">Monday</TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
             </TableRow>
           </TableBody>
           <TableBody>
             <TableRow>
               <TableCell className="capitalize">Tuesday</TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
             </TableRow>
           </TableBody>
           <TableBody>
             <TableRow>
               <TableCell className="capitalize">Wednesday</TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
             </TableRow>
           </TableBody>
           <TableBody>
             <TableRow>
               <TableCell className="capitalize">Thursday</TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
             </TableRow>
           </TableBody>
           <TableBody>
             <TableRow>
               <TableCell className="capitalize">Friday</TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
             </TableRow>
           </TableBody>
           <TableBody>
             <TableRow>
               <TableCell className="capitalize">Saturday</TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
             </TableRow>
           </TableBody>
           <TableBody>
             <TableRow>
               <TableCell className="capitalize">Sunday</TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
-              <TableCell>
-                <Input placeholder="firfir/bread" />
+              <TableCell className="text-start">
+                <Button variant="secondary" className="">
+                  firfir/bread
+                </Button>
               </TableCell>
             </TableRow>
           </TableBody>
         </Table>
       </div>
-      <Button className="w-full mt-5">Submit</Button>
     </div>
   );
 };

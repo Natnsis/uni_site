@@ -14,9 +14,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
-
 model News {
   id          String   @id @default(cuid())
   title       String
@@ -28,14 +25,14 @@ model News {
 }
 
 model Schedule {
-  id          String   @id @default(cuid())
-  department  String
-  year        Int
-  fileUrl     String  
-  uploadedBy  String
-  userId      String
+   id        String   @id @default(uuid())
+  day       String   @unique 
+  time      String 
+  food      String
   createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
+
 
 model Curriculum {
   id          String   @id @default(cuid())

@@ -37,7 +37,7 @@ const News = () => {
     setContent("");
     setPublished(true);
     setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 4000); // Hide after 4 seconds
+    setTimeout(() => setShowAlert(false), 4000);
   };
 
   return (
