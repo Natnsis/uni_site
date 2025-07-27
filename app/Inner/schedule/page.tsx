@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 import Link from "next/link";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const page = () => {
   const [food, setFood] = useState<String>("");
@@ -23,6 +23,10 @@ const page = () => {
   const [time, setTime] = useState<String>("");
 
   const handleScheduleSubmit = () => {};
+
+  useEffect(() => {
+    console.log(food, day, time);
+  }, [food, day, time]);
 
   return (
     <div className="h-screen flex justify-center items-center">
@@ -38,27 +42,50 @@ const page = () => {
             <Label htmlFor="food" className="mb-2">
               food name
             </Label>
-            <Input placeholder="rise and bread" name="food" />
+            <Input
+              placeholder="rise and bread"
+              name="food"
+              value={food}
+              onChange={(e) => setFood(e.target.value)}
+            />
           </div>
 
           <div>
             <Label htmlFor="time"> select food time</Label>
             <div className="flex gap-2 items-center">
-              <Input type="radio" name="time" className="w-5" />
+              <Input
+                type="radio"
+                name="time"
+                className="w-5"
+                value="breakfast"
+                onChange={(e) => setTime(e.target.value)}
+              />
               <p>Breakfast</p>
             </div>
             <div className="flex gap-2 items-center">
-              <Input type="radio" name="time" className="w-5" />
+              <Input
+                type="radio"
+                name="time"
+                className="w-5"
+                value="lunch"
+                onChange={(e) => setTime(e.target.value)}
+              />
               <p>Lunch</p>
             </div>
             <div className="flex gap-2 items-center">
-              <Input type="radio" name="time" className="w-5" />
+              <Input
+                type="radio"
+                name="time"
+                className="w-5"
+                value="dinner"
+                onChange={(e) => setTime(e.target.value)}
+              />
               <p>Dinner</p>
             </div>
           </div>
 
           <div>
-            <Select>
+            <Select onValueChange={(e) => setDay(e)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Select a Day" />
               </SelectTrigger>

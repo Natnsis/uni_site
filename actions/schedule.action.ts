@@ -21,3 +21,7 @@ export async function createSchedule({
     console.log("error unable to insert schedule", e);
   }
 }
+
+// const mondayLunches = rawSchedule.filter(
+//   (item) => item.day === 'MON' && item.foodTime === 'LUNCH'
+// );
