@@ -26,7 +26,7 @@ model News {
 
 model Schedule {
    id        String   @id @default(uuid())
-  day       String   @unique 
+  day       String   
   time      String 
   food      String
   createdAt   DateTime @default(now())

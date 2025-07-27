@@ -22,6 +22,13 @@ export async function createSchedule({
   }
 }
 
-// const mondayLunches = rawSchedule.filter(
-//   (item) => item.day === 'MON' && item.foodTime === 'LUNCH'
-// );
+export async function fetchSchedule() {
+  try {
+    const schedule = await prisma.schedule.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+    return { success: true, schedule };
+  } catch (e) {
+    console.log("error fetching schedule", e);
+  }
+}

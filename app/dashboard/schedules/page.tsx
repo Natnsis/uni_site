@@ -1,3 +1,4 @@
+
 import { CafeTable } from "@/components/CafeTable";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
