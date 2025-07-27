@@ -48,8 +48,6 @@ model Gallery {
   id          String   @id @default(cuid())
   imageUrl    String
   caption     String?
-  uploadedBy  String
-  userId      String
   createdAt   DateTime @default(now())
 }
 
@@ -60,10 +58,7 @@ model Lounge {
   imageUrl     String?          
   averageTemp  Float?       
   capacity     Int?              
-  location     String?               
-  socialLink   String?        
-  createdBy    String
-  userId       String
+  location     String?                     
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
