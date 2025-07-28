@@ -12,7 +12,7 @@ const page = () => {
         <SideBar />
         <div className="w-4/5 p-5">
           <Header title="Curriculums" />
-          <div>
+          <div className="mt-10">
             <CurriculumTable />
           </div>
           <Link href="/Inner/curriculum">

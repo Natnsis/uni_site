@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@/lib/prisma";
+import { redirect } from "next/navigation";
 
 interface curriculum {
   name: string;
@@ -24,4 +25,25 @@ export async function postCurriculum({
   }
 }
 
-//add curriculums
+export async function getCurriculum() {
+  try {
+    const curriculum = await prisma.curriculum.findMany({
+      orderBy: [{ department: "asc" }, { name: "asc" }],
+    });
+    return { success: true, curriculum };
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export async function deleteCurriculum(id: string) {
+  try {
+    const deleteCurriculum = await prisma.curriculum.delete({
+      where: { id },
+    });
+    redirect("/");
+    return { success: true };
+  } catch (e) {
+    console.log(e);
+  }
+}
