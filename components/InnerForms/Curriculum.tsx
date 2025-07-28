@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "../ui/card";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -16,14 +16,33 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { postCurriculum } from "@/actions/curriculum.action";
 
 const Curriculum = () => {
-  const [department, setDepartment] = useState("");
-  const [description, setDescription] = useState("");
-  const [year, setYear] = useState("");
-  const [name, setName] = useState("");
+  const [department, setDepartment] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [year, setYear] = useState<string>("");
+  const [name, setName] = useState<string>("");
 
-  const handleSubmitCurriculum = () => {};
+  const handleSubmitCurriculum = async () => {
+    try {
+      const response = await postCurriculum({
+        name,
+        description,
+        year,
+        department,
+      });
+      if (response?.success) {
+        alert("Curriculum posted successfully!");
+        setName("");
+        setDescription("");
+        setYear("");
+        setDepartment("");
+      }
+    } catch (e) {
+      console.error("Error posting curriculum:", e);
+    }
+  };
 
   return (
     <Card className="p-10 w-[40%] ">
@@ -39,17 +58,17 @@ const Curriculum = () => {
           <Input
             type="text"
             id="name"
-            name="name"
+            onChange={(e) => setName(e.target.value)}
             placeholder="Data Structure and Algorithms"
           />
         </div>
         <Textarea
           placeholder="It is the bedrock of efficient programming and problem-solving. This course will equip you with the fundamental tools and techniques to organize and manipulate data effectively. "
-          name="description"
+          onChange={(e) => setDescription(e.target.value)}
         />
         <div className="flex justify-between ">
           <div>
-            <Select name="year">
+            <Select onValueChange={(e) => setYear(e)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Select a year" />
               </SelectTrigger>
@@ -66,7 +85,7 @@ const Curriculum = () => {
             </Select>
           </div>
           <div>
-            <Select name="department">
+            <Select onValueChange={(e) => setDepartment(e)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Select a department" />
               </SelectTrigger>

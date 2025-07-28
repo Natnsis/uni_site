@@ -39,7 +39,7 @@ model Curriculum {
   department  String
   description String
   year        String
-  course      String
+  name        String
   createdAt   DateTime @default(now())
 }
 
