@@ -45,10 +45,10 @@ model Curriculum {
 }
 
 model Gallery {
-  id          String   @id @default(cuid())
-  imageUrl    String
-  caption     String?
-  createdAt   DateTime @default(now())
+  id        String   @id @default(cuid())
+  caption   String
+  imageUrl  String
+  createdAt DateTime @default(now())
 }
 
 model Lounge {

@@ -49,6 +49,7 @@ const GalleryForm = () => {
       setFile(null);
     } else {
       alert("Saved to Cloudinary, but DB failed.");
+      
     }
   };
 
