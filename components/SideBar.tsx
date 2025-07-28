@@ -7,9 +7,7 @@ import {
   Images,
   Newspaper,
   NotepadText,
-  RollerCoaster,
   Usb,
-  User,
 } from "lucide-react";
 
 const SideBar = () => {
@@ -48,12 +46,6 @@ const SideBar = () => {
         <Button variant="ghost" className="flex justify-start py-5 ">
           <Images />
           Gallery
-        </Button>
-      </Link>
-      <Link href="/dashboard/lounges">
-        <Button variant="ghost" className="flex justify-start py-5 ">
-          <RollerCoaster />
-          Lounges
         </Button>
       </Link>
       <Link href="/dashboard/about">

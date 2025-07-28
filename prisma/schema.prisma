@@ -37,10 +37,9 @@ model Schedule {
 model Curriculum {
   id          String   @id @default(cuid())
   department  String
-  year        Int
-  fileUrl     String
-  uploadedBy  String
-  userId      String
+  description String
+  year        String
+  course      String
   createdAt   DateTime @default(now())
 }
 
