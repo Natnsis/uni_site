@@ -19,7 +19,6 @@ const Header = ({ title }: props) => {
         {user
           ? `Hello, ${user.displayName ?? "anon"}`
           : "You are not logged in"}
-        <Bell />
         <UserButton />
       </div>
     </div>
