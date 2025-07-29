@@ -1,3 +1,4 @@
+import Count from "@/components/Count";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import { stackServerApp } from "@/stack";
@@ -14,6 +15,9 @@ const page = async () => {
             <SideBar />
             <div className="w-4/5 p-5">
               <Header title="Dashboard" />
+              <div className="mt-5">
+                <Count />
+              </div>
             </div>
           </div>
         </div>
