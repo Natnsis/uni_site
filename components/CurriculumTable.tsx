@@ -12,6 +12,7 @@ import {
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { deleteCurriculum, getCurriculum } from "@/actions/curriculum.action";
+import { useRouter } from "next/navigation";
 
 interface curriculumItem {
   id: string;
@@ -28,6 +29,7 @@ interface Curriculum {
 
 export function CurriculumTable() {
   const [curriculum, setCurriculum] = useState<curriculumItem[]>([]);
+  const router = useRouter();
   const fetchData = async () => {
     try {
       const response = await getCurriculum();
@@ -38,10 +40,17 @@ export function CurriculumTable() {
       console.log(e);
     }
   };
-
   useEffect(() => {
     fetchData();
   }, []);
+
+  const deleteItem = async (id: string) => {
+    const response = await deleteCurriculum(id);
+    if (response?.success) {
+      alert("deleted successfully");
+      router.refresh();
+    }
+  };
   return (
     <Table>
       <TableCaption>A list of your recent curriculum entries.</TableCaption>
@@ -60,7 +69,7 @@ export function CurriculumTable() {
             <TableCell>{item.department}</TableCell>
             <TableCell>{item.year}</TableCell>
             <TableCell className="flex gap-4 justify-end">
-              <Button variant="destructive" onClick={deleteCurriculum(item.id)}>
+              <Button variant="destructive" onClick={() => deleteItem(item.id)}>
                 Delete
               </Button>
               <Button>Edit</Button>

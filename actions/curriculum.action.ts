@@ -41,8 +41,7 @@ export async function deleteCurriculum(id: string) {
     const deleteCurriculum = await prisma.curriculum.delete({
       where: { id },
     });
-    redirect("/");
-    return { success: true };
+    return { success: true, deleteCurriculum };
   } catch (e) {
     console.log(e);
   }
