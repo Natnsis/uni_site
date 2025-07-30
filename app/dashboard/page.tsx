@@ -31,7 +31,7 @@ const page = async () => {
                           src="/news.png"
                           width={200}
                           height={100}
-                          alt="hehe"
+                          alt="news"
                           className="rounded-lg mb-5"
                         />
                         <h1 className="font-bold text-md text-start">
@@ -49,7 +49,7 @@ const page = async () => {
                           src="/schedule.png"
                           width={200}
                           height={100}
-                          alt="hehe"
+                          alt="schedule"
                           className="rounded-lg mb-5"
                         />
                         <h1 className="font-bold text-md text-start">
@@ -68,7 +68,7 @@ const page = async () => {
                           src="/curriculum.png"
                           width={200}
                           height={100}
-                          alt="hehe"
+                          alt="curriculum"
                           className="rounded-lg mb-5"
                         />
                         <h1 className="font-bold text-md text-start">
@@ -87,7 +87,7 @@ const page = async () => {
                           src="/gallery.png"
                           width={200}
                           height={100}
-                          alt="hehe"
+                          alt="gallery"
                           className="rounded-lg mb-5"
                         />
                         <h1 className="font-bold text-md text-start">
@@ -105,7 +105,7 @@ const page = async () => {
                           src="/about.png"
                           width={200}
                           height={100}
-                          alt="hehe"
+                          alt="about"
                           className="rounded-lg mb-5"
                         />
                         <h1 className="font-bold text-md text-start">About</h1>
