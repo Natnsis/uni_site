@@ -7,6 +7,7 @@ import Link from "next/link";
 import React from "react";
 import { fetchNews, deleteNews } from "@/actions/news.action";
 import { redirect } from "next/navigation";
+import { MiniSidebar } from "@/components/MIniSidebar";
 
 const Page = async () => {
   const { success, news } = await fetchNews();
@@ -14,6 +15,7 @@ const Page = async () => {
     <div className="w-screen p-5">
       <div className="flex w-full">
         <SideBar />
+        <MiniSidebar />
         <div className="w-4/5 p-5">
           <Header title="News & Updates" />
           <div className="mt-5">

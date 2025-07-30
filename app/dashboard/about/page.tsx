@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { addAboutText, fetchAboutText } from "@/actions/about.action";
 import { Card } from "@/components/ui/card";
+import { MiniSidebar } from "@/components/MIniSidebar";
 
 interface AboutText {
   success: boolean;
@@ -19,7 +20,7 @@ const page = () => {
   const loadAboutText = async () => {
     try {
       const response = await fetchAboutText();
-      if (response.success) {
+      if (response?.success) {
         setAboutText(response.about);
       }
     } catch (e) {
@@ -54,6 +55,7 @@ const page = () => {
     <div className="w-screen p-5">
       <div className="flex w-full">
         <SideBar />
+        <MiniSidebar />
         <div className="w-4/5 p-5">
           <Header title="About" />
           {/* insertion place */}

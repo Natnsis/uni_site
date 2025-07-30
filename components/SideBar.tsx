@@ -12,7 +12,7 @@ import {
 
 const SideBar = () => {
   return (
-    <div className="w-1/5 flex-col flex gap-5">
+    <div className="md:w-1/5 md:flex-col md:flex md:gap-5 hidden">
       <div className="border-b-1 py-5">
         <h1 className="text-start font-bold text-xl ">
           Asu Student Assistance

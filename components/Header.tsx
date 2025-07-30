@@ -15,10 +15,15 @@ const Header = ({ title }: props) => {
         <h1 className="text-4xl font-bold">{title}</h1>
       </div>
       <div className="flex gap-8 items-center">
-        <ModeToggle />
-        {user
-          ? `Hello, ${user.displayName ?? "anon"}`
-          : "You are not logged in"}
+        <div className="hidden md:block">
+          <ModeToggle />
+        </div>
+        <div className="hidden sm:block">
+          {user
+            ? `Hello, ${user.displayName ?? "anon"}`
+            : "You are not logged in"}
+        </div>
+
         <UserButton />
       </div>
     </div>

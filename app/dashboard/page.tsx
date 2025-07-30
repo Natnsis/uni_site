@@ -1,5 +1,6 @@
 import Count from "@/components/Count";
 import Header from "@/components/Header";
+import { MiniSidebar } from "@/components/MIniSidebar";
 import SideBar from "@/components/SideBar";
 import { Card } from "@/components/ui/card";
 import { stackServerApp } from "@/stack";
@@ -8,13 +9,13 @@ import Image from "next/image";
 
 const page = async () => {
   const user = await stackServerApp.getUser();
-
   return (
     <>
       {user ? (
         <div className="w-screen p-5">
-          <div className="flex w-full">
+          <div className="flex w-full ">
             <SideBar />
+            <MiniSidebar />
             <div className="w-4/5 p-5">
               <Header title="Dashboard" />
               <div className="mt-5">
@@ -23,7 +24,7 @@ const page = async () => {
               <div className="mt-5">
                 <div>
                   <h1 className="text-lg">Overview</h1>
-                  <div className="flex gap-5">
+                  <div className="md:flex md:gap-5 ">
                     <Card className="flex p-5">
                       <div>
                         <Image
@@ -38,7 +39,7 @@ const page = async () => {
                         </h1>
                         <p>
                           post news and important updates for students so that
-                          they could access it quickly with the dedicted app.
+                          they could access it quickly with the dedicated app.
                         </p>
                       </div>
                     </Card>

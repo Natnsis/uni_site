@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 const WelcomeHeader = () => {
   return (
-    <div className="flex p-5 justify-between border-b-1">
+    <div className="sm:flex sm:p-5 sm:justify-between border-b-1">
       <div className="flex gap-3 items-center text-4xl font-extrabold ">
         <Image
           src="/asuLogo.png"
@@ -16,7 +16,7 @@ const WelcomeHeader = () => {
         />
         <h1>Student Assistance</h1>
       </div>
-      <div className="space-x-10 flex items-center">
+      <div className="lg:flex hidden lg:space-x-4 lg:items-center">
         <Link href="/">Platform</Link>
         <Link
           href="
@@ -26,7 +26,7 @@ const WelcomeHeader = () => {
         </Link>
         <Link href="/">How it works</Link>
       </div>
-      <div className="flex items-center">
+      <div className="sm:flex sm:items-center flex justify-center mb-5 ">
         <Button className="rounded-full bg-green-400">Get the app</Button>
       </div>
     </div>

@@ -11,9 +11,8 @@ const page = () => {
   return (
     <main>
       <WelcomeHeader />
-      {/* hero */}
-      <div className="my-10 flex gap-8">
-        <div className="w-[40%] px-20 py-10 ">
+      <div className="my-10 sm:flex gap-8">
+        <div className="sm:w-[40%] px-20 sm:py-10 ">
           <h1>Explore all the Features and use them for free </h1>
           <p className="text-[40px] font-extrabold">
             University Students Management Platform
@@ -27,7 +26,7 @@ const page = () => {
             </Button>
           </div>
         </div>
-        <div className="bg-white w-[60%] p-5">
+        <div className="bg-white sm:w-[60%] p-5">
           <Image
             src="/homeFront.png"
             alt="home screen image"
