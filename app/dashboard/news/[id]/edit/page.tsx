@@ -9,14 +9,7 @@ import React from "react";
 // Assuming you have Lucide icons available
 import { Check, Edit, Save } from "lucide-react";
 
-// Define the correct type for the page component's props.
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-
-const EditNewsPage = async ({ params }: PageProps) => {
+const EditNewsPage = async ({ params }: { params: { id: string } }) => {
   const { news } = await getNewsById(params.id);
 
   if (!news) return notFound();
