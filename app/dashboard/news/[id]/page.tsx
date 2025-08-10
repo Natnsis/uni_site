@@ -5,11 +5,15 @@ import { getNewsById, updateNews } from "@/actions/news.action";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import React from "react";
-
-// Assuming you have Lucide icons available
 import { Check, Edit, Save } from "lucide-react";
 
-const EditNewsPage = async ({ params }: { params: { id: string } }) => {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+const EditNewsPage = async ({ params }: PageProps) => {
   const { news } = await getNewsById(params.id);
 
   if (!news) return notFound();

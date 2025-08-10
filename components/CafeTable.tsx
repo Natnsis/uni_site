@@ -24,7 +24,7 @@ export function CafeTable() {
   useEffect(() => {
     const getSchedule = async () => {
       const response = await fetchSchedule();
-      if (response.success) {
+      if (response?.success) {
         setSchedule(response.schedule);
       } else {
         console.error("Failed to fetch schedule:", response.error);
