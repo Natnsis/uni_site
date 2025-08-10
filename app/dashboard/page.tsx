@@ -13,7 +13,7 @@ const page = async () => {
     <>
       {user ? (
         <div className="w-screen p-5">
-          <div className="flex w-full ">
+          <div className="flex w-full">
             <SideBar />
             <MiniSidebar />
             <div className="w-4/5 p-5">
@@ -21,100 +21,54 @@ const page = async () => {
               <div className="mt-5">
                 <Count />
               </div>
+
               <div className="mt-5">
-                <div>
-                  <h1 className="text-lg">Overview</h1>
-                  <div className="md:flex md:gap-5 ">
-                    <Card className="flex p-5">
-                      <div>
-                        <Image
-                          src="/news.png"
-                          width={200}
-                          height={100}
-                          alt="news"
-                          className="rounded-lg mb-5"
-                        />
-                        <h1 className="font-bold text-md text-start">
-                          News and updates
-                        </h1>
-                        <p>
-                          post news and important updates for students so that
-                          they could access it quickly with the dedicated app.
-                        </p>
-                      </div>
+                <h1 className="text-lg font-semibold mb-3">Overview</h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                  {[
+                    {
+                      img: "/news.png",
+                      title: "News and updates",
+                      desc: "Post news and important updates for students so they can access them quickly in the app.",
+                    },
+                    {
+                      img: "/schedule.png",
+                      title: "Cafeteria Schedule",
+                      desc: "Post all updates of the cafeteria schedule so students can prepare ahead of time.",
+                    },
+                    {
+                      img: "/curriculum.png",
+                      title: "Curriculum",
+                      desc: "Post curriculums of specific courses so students can see their upcoming classes.",
+                    },
+                    {
+                      img: "/gallery.png",
+                      title: "Gallery",
+                      desc: "Showcase buildings and places within the campus.",
+                    },
+                    {
+                      img: "/about.png",
+                      title: "About",
+                      desc: "Provide a description of the platform for students to view.",
+                    },
+                  ].map((item, i) => (
+                    <Card
+                      key={i}
+                      className="p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col items-start"
+                    >
+                      <Image
+                        src={item.img}
+                        width={150}
+                        height={80}
+                        alt={item.title}
+                        className="rounded-lg mb-3 w-full object-cover h-28"
+                      />
+                      <h1 className="font-semibold text-base mb-1">
+                        {item.title}
+                      </h1>
+                      <p className="text-sm text-gray-600">{item.desc}</p>
                     </Card>
-                    <Card className="flex p-5">
-                      <div>
-                        <Image
-                          src="/schedule.png"
-                          width={200}
-                          height={100}
-                          alt="schedule"
-                          className="rounded-lg mb-5"
-                        />
-                        <h1 className="font-bold text-md text-start">
-                          Cafeteria Schedule
-                        </h1>
-                        <p>
-                          Post all the updates of the cafeteria schedule so that
-                          the students get well prepared for what is waiting for
-                          them on time.
-                        </p>
-                      </div>
-                    </Card>
-                    <Card className="flex p-5">
-                      <div>
-                        <Image
-                          src="/curriculum.png"
-                          width={200}
-                          height={100}
-                          alt="curriculum"
-                          className="rounded-lg mb-5"
-                        />
-                        <h1 className="font-bold text-md text-start">
-                          Curriculum
-                        </h1>
-                        <p>
-                          post curriculums of specific courses so that students
-                          can check the courses they will be taking according to
-                          their year and department.
-                        </p>
-                      </div>
-                    </Card>
-                    <Card className="flex p-5">
-                      <div>
-                        <Image
-                          src="/gallery.png"
-                          width={200}
-                          height={100}
-                          alt="gallery"
-                          className="rounded-lg mb-5"
-                        />
-                        <h1 className="font-bold text-md text-start">
-                          Gallery
-                        </h1>
-                        <p>
-                          Gallery to Post about buildings and places within the
-                          campus.
-                        </p>
-                      </div>
-                    </Card>
-                    <Card className="flex p-5">
-                      <div>
-                        <Image
-                          src="/about.png"
-                          width={200}
-                          height={100}
-                          alt="about"
-                          className="rounded-lg mb-5"
-                        />
-                        <h1 className="font-bold text-md text-start">About</h1>
-                        <p>
-                          description from the platform to be seen by students.
-                        </p>
-                      </div>
-                    </Card>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
