@@ -12,49 +12,73 @@ import {
 
 const SideBar = () => {
   return (
-    <div className="md:w-1/5 md:flex-col md:flex md:gap-5 hidden">
-      <div className="border-b-1 py-5">
-        <h1 className="text-start font-bold text-xl ">
-          Asu Student Assistance
-        </h1>
-      </div>
-      <Link href="/dashboard">
-        <Button variant="ghost" className="flex justify-start py-5 ">
-          <House />
-          Dashboard
-        </Button>
-      </Link>
-      <Link href="/dashboard/news">
-        <Button variant="ghost" className="flex justify-start py-5 ">
-          <Newspaper />
-          News and Updates
-        </Button>
-      </Link>
-      <Link href="/dashboard/schedules">
-        <Button variant="ghost" className="flex justify-start py-5 ">
-          <CalendarCheck />
-          Schedule
-        </Button>
-      </Link>
-      <Link href="/dashboard/curriculums">
-        <Button variant="ghost" className="flex justify-start py-5 ">
-          <NotepadText />
-          Curriculum
-        </Button>
-      </Link>
-      <Link href="/dashboard/gallery">
-        <Button variant="ghost" className="flex justify-start py-5 ">
-          <Images />
-          Gallery
-        </Button>
-      </Link>
-      <Link href="/dashboard/about">
-        <Button variant="ghost" className="flex justify-start py-5 ">
-          <Usb />
-          About
-        </Button>
-      </Link>
-    </div>
+    <aside className="hidden md:flex md:flex-col md:w-1/5 md:gap-4 bg-white border-r border-gray-200 h-screen p-6 sticky top-0 mr-5">
+      <h1 className="text-left font-extrabold text-2xl mb-8 text-green-700">
+        ASU Student Assistance
+      </h1>
+
+      <nav className="flex flex-col space-y-2">
+        <Link href="/dashboard" passHref>
+          <Button
+            variant="ghost"
+            className="flex items-center gap-3 justify-start py-3 px-4 rounded-md text-gray-700 hover:bg-green-100 hover:text-green-700 transition"
+          >
+            <House className="w-5 h-5" />
+            Dashboard
+          </Button>
+        </Link>
+
+        <Link href="/dashboard/news" passHref>
+          <Button
+            variant="ghost"
+            className="flex items-center gap-3 justify-start py-3 px-4 rounded-md text-gray-700 hover:bg-green-100 hover:text-green-700 transition"
+          >
+            <Newspaper className="w-5 h-5" />
+            News and Updates
+          </Button>
+        </Link>
+
+        <Link href="/dashboard/schedules" passHref>
+          <Button
+            variant="ghost"
+            className="flex items-center gap-3 justify-start py-3 px-4 rounded-md text-gray-700 hover:bg-green-100 hover:text-green-700 transition"
+          >
+            <CalendarCheck className="w-5 h-5" />
+            Schedule
+          </Button>
+        </Link>
+
+        <Link href="/dashboard/curriculums" passHref>
+          <Button
+            variant="ghost"
+            className="flex items-center gap-3 justify-start py-3 px-4 rounded-md text-gray-700 hover:bg-green-100 hover:text-green-700 transition"
+          >
+            <NotepadText className="w-5 h-5" />
+            Curriculum
+          </Button>
+        </Link>
+
+        <Link href="/dashboard/gallery" passHref>
+          <Button
+            variant="ghost"
+            className="flex items-center gap-3 justify-start py-3 px-4 rounded-md text-gray-700 hover:bg-green-100 hover:text-green-700 transition"
+          >
+            <Images className="w-5 h-5" />
+            Gallery
+          </Button>
+        </Link>
+
+        <Link href="/dashboard/about" passHref>
+          <Button
+            variant="ghost"
+            className="flex items-center gap-3 justify-start py-3 px-4 rounded-md text-gray-700 hover:bg-green-100 hover:text-green-700 transition"
+          >
+            <Usb className="w-5 h-5" />
+            About
+          </Button>
+        </Link>
+      </nav>
+    </aside>
   );
 };
 

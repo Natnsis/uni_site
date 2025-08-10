@@ -2,7 +2,7 @@
 
 import React from "react";
 import WelcomeHeader from "@/components/Navbar";
-import { CloudUpload, MessageSquare } from "lucide-react";
+import { CloudUpload, MessageSquare, RefreshCcw } from "lucide-react";
 
 const steps = [
   {
@@ -12,7 +12,13 @@ const steps = [
     icon: <CloudUpload className="w-16 h-16 text-green-500" />,
   },
   {
-    title: "2. Students Stay Connected",
+    title: "2. Synchronization",
+    description:
+      "The app continuously syncs data between the server and students' devices, ensuring all updates are delivered seamlessly and reliably.",
+    icon: <RefreshCcw className="w-16 h-16 text-green-500 animate-spin-slow" />,
+  },
+  {
+    title: "3. Students Stay Connected",
     description:
       "Students receive timely notifications, interact with resources, and stay engaged with campus life.",
     icon: <MessageSquare className="w-16 h-16 text-green-500" />,
@@ -37,7 +43,7 @@ const Page = () => {
       </section>
 
       {/* Steps Section */}
-      <section className="py-16 px-6 sm:px-20 max-w-7xl mx-auto grid gap-12 sm:grid-cols-2">
+      <section className="py-16 px-6 sm:px-20 max-w-7xl mx-auto grid gap-12 sm:grid-cols-3">
         {steps.map((step, index) => (
           <div
             key={index}

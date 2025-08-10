@@ -9,8 +9,6 @@ import { fetchNews, deleteNews } from "@/actions/news.action";
 import { redirect } from "next/navigation";
 import { MiniSidebar } from "@/components/MIniSidebar";
 
-// Defining an explicit type for the news items improves type safety
-// and code clarity.
 interface NewsItem {
   id: string;
   title: string;
@@ -19,7 +17,6 @@ interface NewsItem {
 }
 
 const Page = async () => {
-  // We can now assume `news` will be an array of `NewsItem` or null/undefined
   const { success, news } = await fetchNews();
 
   return (
@@ -27,52 +24,50 @@ const Page = async () => {
       <SideBar />
       <MiniSidebar />
 
-      <div className="flex-1 p-5 md:p-10 lg:pl-0 flex flex-col">
+      <main className="flex-1 p-6 md:p-10 lg:pl-0 flex flex-col">
         <Header title="News & Updates" />
 
-        <div className="mt-6 w-full flex justify-end">
-          <Link href="/Inner/news">
-            <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+        <div className="mt-6 flex justify-end">
+          <Link href="/Inner/news" passHref>
+            <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
               Create New Post
             </Button>
           </Link>
         </div>
 
-        {/* News List Section */}
-        <div className="mt-5 flex-1">
-          {/* We've added a type guard here to ensure news is not null or undefined */}
-          {success && (news?.length ?? 0) > 0 ? (
-            // The map function now uses the `NewsItem` type
-            (news as NewsItem[]).map((item) => (
+        <section className="mt-8 flex-1 overflow-auto">
+          {success && news && news.length > 0 ? (
+            news.map((item: NewsItem) => (
               <Card
                 key={item.id}
-                className="mb-4 p-5 flex flex-col md:flex-row items-start md:items-center justify-between shadow-md hover:shadow-xl transition-shadow duration-300 rounded-xl"
+                className="mb-5 p-6 flex flex-col md:flex-row items-start md:items-center justify-between shadow-md hover:shadow-xl transition-shadow duration-300 rounded-xl"
               >
-                <div className="flex-1 space-y-2 mb-4 md:mb-0">
-                  <h1 className="text-2xl font-bold text-gray-900">
+                <div className="flex-1 mb-5 md:mb-0 space-y-2">
+                  <h2 className="text-2xl font-bold text-gray-900">
                     {item.title}
-                  </h1>
+                  </h2>
                   <p className="text-gray-600">{item.content}</p>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3 flex-wrap">
                   {item.published ? (
                     <Button
                       variant="outline"
-                      className="bg-green-100 text-green-700 font-semibold"
+                      className="bg-green-100 text-green-700 font-semibold cursor-default"
+                      disabled
                     >
                       Published
                     </Button>
                   ) : (
                     <Button
                       variant="destructive"
-                      className="bg-yellow-100 text-yellow-700 font-semibold"
+                      className="bg-yellow-100 text-yellow-700 font-semibold cursor-default"
+                      disabled
                     >
                       Draft
                     </Button>
                   )}
 
-                  {/* Delete Form */}
                   <form
                     action={async () => {
                       "use server";
@@ -86,17 +81,18 @@ const Page = async () => {
                       type="submit"
                       size="icon"
                       className="bg-red-500 hover:bg-red-600"
+                      aria-label="Delete news"
                     >
                       <Trash className="w-5 h-5" />
                     </Button>
                   </form>
 
-                  {/* Edit Button with Link */}
-                  <Link href={`/dashboard/news/${item.id}`}>
+                  <Link href={`/dashboard/news/${item.id}`} passHref>
                     <Button
                       variant="secondary"
                       size="icon"
                       className="bg-blue-500 hover:bg-blue-600 text-white"
+                      aria-label="Edit news"
                     >
                       <Pencil className="w-5 h-5" />
                     </Button>
@@ -105,12 +101,12 @@ const Page = async () => {
               </Card>
             ))
           ) : (
-            <div className="text-center text-gray-500 mt-20">
+            <p className="text-center text-gray-500 text-lg mt-24">
               No news found.
-            </div>
+            </p>
           )}
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 };

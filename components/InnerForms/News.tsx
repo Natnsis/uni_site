@@ -41,60 +41,77 @@ const News = () => {
   };
 
   return (
-    <Card className="p-10 w-[40%] h-[70%]">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="flex w-full justify-end">
-          <Link href="/dashboard/news">
-            <Button type="button">Back</Button>
+    <Card className="p-10 w-full max-w-md mx-auto h-auto">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+        <div className="flex justify-between items-center mb-2">
+          <h1 className="text-xl font-extrabold text-center flex-1">
+            Post News
+          </h1>
+          <Link href="/dashboard/news" className="ml-auto">
+            <Button type="button" variant="outline" size="sm">
+              Back
+            </Button>
           </Link>
         </div>
-        <h1 className="text-lg text-center font-extrabold">Post News</h1>
+
         <Input
           type="text"
-          placeholder="exit exam.."
+          placeholder="Exit exam..."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
+          className="text-gray-900"
         />
+
         <Textarea
-          placeholder="The exit exam will be this month within 10 days"
+          placeholder="The exit exam will be this month within 10 days."
           value={content}
           onChange={(e) => setContent(e.target.value)}
           required
+          className="text-gray-900"
+          rows={5}
         />
-        <div className="text-sm">
-          <div className="flex gap-4">
+
+        <fieldset className="flex flex-col gap-3 text-sm">
+          <legend className="font-semibold">Publication status</legend>
+          <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="radio"
               name="publish"
               value="true"
-              id="publish"
               checked={published}
               onChange={() => setPublished(true)}
+              className="cursor-pointer"
             />
-            <label htmlFor="publish">Publish now</label>
-          </div>
-          <div className="flex gap-4">
+            Publish now
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="radio"
               name="publish"
               value="false"
-              id="draft"
               checked={!published}
               onChange={() => setPublished(false)}
+              className="cursor-pointer"
             />
-            <label htmlFor="draft">Save as draft</label>
-          </div>
-        </div>
-        <Button type="submit">Submit</Button>
+            Save as draft
+          </label>
+        </fieldset>
+
+        <Button type="submit" className="mt-4" size="lg">
+          Submit
+        </Button>
       </form>
+
       {showAlert && (
-        <Alert variant="default" className="mb-4">
-          <Check />
-          <AlertTitle>Success!</AlertTitle>
-          <AlertDescription>
-            You have posted news successfully!
-          </AlertDescription>
+        <Alert variant="default" className="mt-6 flex items-center gap-3">
+          <Check className="w-5 h-5 text-green-600" />
+          <div>
+            <AlertTitle>Success!</AlertTitle>
+            <AlertDescription>
+              You have posted news successfully!
+            </AlertDescription>
+          </div>
         </Alert>
       )}
     </Card>
