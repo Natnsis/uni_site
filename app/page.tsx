@@ -21,9 +21,11 @@ const page = () => {
             <Button variant="secondary" size="lg">
               <Link href="/dashboard">Login</Link>
             </Button>
-            <Button variant="outline" size="lg">
-              <Play /> watch demo
-            </Button>
+            <Link href="/Installation">
+              <Button variant="outline" size="lg">
+                <Play /> Steps to Install
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="bg-white sm:w-[60%] p-5">

@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// The Button component is no longer needed since we are styling the Link directly.
-// import { Button } from "./ui/button";
 
 const WelcomeHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle the mobile menu state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const appDownloadUrl =
-    "https://expo.dev/accounts/nati2362/projects/v1/builds/7d1c1788-47fe-4f01-94ba-21849d1d6cd9";
+    "https://expo.dev/accounts/nati2362/projects/v1/builds/4646b442-e883-469f-a641-968e8d386bcc";
 
   return (
     <header className="sticky top-0 z-50 bg-gray-900 text-white shadow-lg">
