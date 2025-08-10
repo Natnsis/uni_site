@@ -5,9 +5,18 @@ import { getNewsById, updateNews } from "@/actions/news.action";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import React from "react";
+
+// Assuming you have Lucide icons available
 import { Check, Edit, Save } from "lucide-react";
 
-const EditNewsPage = async ({ params }: { params: { id: string } }) => {
+// Define the correct type for the page component's props.
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
+const EditNewsPage = async ({ params }: PageProps) => {
   const { news } = await getNewsById(params.id);
 
   if (!news) return notFound();
@@ -29,7 +38,6 @@ const EditNewsPage = async ({ params }: { params: { id: string } }) => {
             <Edit className="w-8 h-8 text-green-500" />
             Edit News
           </h1>
-          {/* Corrected Link implementation */}
           <Link
             href="/dashboard/news"
             className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-full px-6 py-2 transition-colors duration-200"
@@ -75,7 +83,7 @@ const EditNewsPage = async ({ params }: { params: { id: string } }) => {
                   name="published"
                   value="true"
                   defaultChecked={news.published}
-                  className="hidden" // Hide the default radio button
+                  className="hidden"
                 />
                 <Check
                   className={`w-4 h-4 transition-transform duration-200 ${
