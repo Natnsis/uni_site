@@ -10,7 +10,7 @@ const WelcomeHeader = () => {
   };
 
   const appDownloadUrl =
-    "https://expo.dev/accounts/nati2362/projects/v1/builds/4646b442-e883-469f-a641-968e8d386bcc";
+    "https://expo.dev/accounts/nati2362/projects/v1/builds/1d943ad6-703e-4527-b15c-46b374c15453";
 
   return (
     <header className="sticky top-0 z-50 bg-gray-900 text-white shadow-lg">

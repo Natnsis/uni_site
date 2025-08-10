@@ -6,31 +6,23 @@ import Link from "next/link";
 const steps = [
   {
     id: 1,
-    title: "Step 1: Open the Expo Link",
+    title: "Step 1: Open the Link through this button",
     description:
       "Click the 'Get App' button to open the Expo app install page.",
-    image: "/about.png",
+    image: "/homeScreen.png",
   },
   {
     id: 2,
-    title: "Step 2: Install Expo Go",
+    title: "Step 2: Download the App by pressing Install button",
     description:
-      "If you don't have the Expo Go app, download it from the App Store or Google Play.",
-    image: "/assets/images/step2.png",
+      "Press the 'Install' button and your browser will start downloading the Apk file.",
+    image: "/installation.png",
   },
   {
     id: 3,
-    title: "Step 3: Open the App in Expo Go",
-    description:
-      "Once Expo Go is installed, open it and scan the QR code or open the link you just clicked.",
-    image: "/assets/images/step3.png",
-  },
-  {
-    id: 4,
-    title: "Step 4: Install the App on Your Phone",
-    description:
-      "In Expo Go, tap the '...' menu and select 'Add to Home Screen' to install the app like a native app.",
-    image: "/assets/images/step4.png",
+    title: "Step 3: Install the app",
+    description: "If your Android version is latest or compatible .",
+    image: "/image.png",
     isFinal: true,
   },
 ];
@@ -97,7 +89,7 @@ const Installation = () => {
       </div>
 
       <footer className="py-4 text-center text-gray-400 text-sm">
-        &copy; 2025 Your Company Name
+        &copy; 2025 &copy; copy right 2025
       </footer>
     </main>
   );
