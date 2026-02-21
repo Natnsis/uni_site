@@ -43,8 +43,7 @@ const page = () => {
       <div className="mt-5 bg-secondary py-5 px-2 rounded-lg">
         <h1 className="text-4xl">Dashboard</h1>
         <p className="text-sm w-1/2 text-gray-500">
-          Monitor academic performance, manage schedules, and oversee student
-          activity all from one centralized control panel.
+          Monitor campus operations and academic performance from one centralized control panel.
         </p>
         <Counts />
         <Anlytics />

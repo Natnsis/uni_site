@@ -1,4 +1,5 @@
 import { ChartAreaLegend } from "./graph/chart-area-legend"
+import { ChartRadialStacked } from "./graph/chart-radial-stacked"
 
 const Anlytics = () => {
   return (
@@ -6,9 +7,8 @@ const Anlytics = () => {
       <div className="w-full">
         <ChartAreaLegend />
       </div>
-      <div className="w-full">
-        <div></div>
-        <div></div>
+      <div className="w-full ">
+        <ChartRadialStacked />
       </div>
     </div>
   )
