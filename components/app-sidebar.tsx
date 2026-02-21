@@ -81,24 +81,35 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="mb-5">
-              <div className="flex justify-end">
-                <SidebarTrigger />
-              </div>
-            </SidebarMenu>
+              <div
+                className={`flex ${state === "collapsed"
+                  ? "flex-col items-center gap-3"
+                  : "flex-row items-center gap-2"
+                  }`}
+              >
+                {state === "collapsed" && <SidebarTrigger />}
 
-            <SidebarMenu className="mb-5">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logo.png"
-                  alt="logo"
-                  width={40}
-                  height={40}
-                />
-                {state !== "collapsed" && (
-                  <h1 className="font-bold text-lg">
-                    Study<span className="text-primary">Sphare</span>
-                  </h1>
-                )}
+                <div className="flex items-center gap-2 w-full">
+                  <Image
+                    src="/logo.png"
+                    alt="logo"
+                    width={40}
+                    height={40}
+                  />
+
+                  {state !== "collapsed" && (
+                    <h1 className="font-bold text-lg">
+                      Study<span className="text-primary">Sphare</span>
+                    </h1>
+                  )}
+
+                  {/* Trigger on right when expanded */}
+                  {state !== "collapsed" && (
+                    <div className="ml-auto">
+                      <SidebarTrigger />
+                    </div>
+                  )}
+                </div>
               </div>
             </SidebarMenu>
 
