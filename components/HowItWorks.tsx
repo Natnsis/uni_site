@@ -1,6 +1,6 @@
 const HowItWorks = () => {
   return (
-    <div></div>
+    <div>how this</div>
   )
 }
 

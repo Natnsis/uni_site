@@ -1,4 +1,3 @@
-import Architecture from "@/components/Architecture"
 import Features from "@/components/Features"
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
@@ -12,7 +11,6 @@ const page = () => {
       <Hero />
       <Problem />
       <Features />
-      <Architecture />
       <HowItWorks />
     </main>
   )

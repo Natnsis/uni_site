@@ -19,7 +19,6 @@ const Header = () => {
           <a className="font-bold text-sm">Home</a>
           <a className="text-sm">Problem</a>
           <a className="text-sm">Features</a>
-          <a className="text-sm">Architecture</a>
           <a className="text-sm">How it Works</a>
         </nav>
 
