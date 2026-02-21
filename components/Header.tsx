@@ -33,7 +33,7 @@ const Header = () => {
             Login
           </Button>
           <Button
-            onClick={() => router.push('/register')}
+            onClick={() => router.push('/login')}
           >
             Sign Up
           </Button>

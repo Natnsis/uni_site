@@ -9,15 +9,21 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
-  useSidebar
+  useSidebar,
+  SidebarTrigger
 } from "@/components/ui/sidebar"
-
 import {
   LayoutDashboard,
   Newspaper,
   Settings,
-  User
+  User,
+  CalendarCog,
+  ClipboardClock,
+  Info,
+  BadgeQuestionMark,
+  LogOut
 } from "lucide-react"
+import Image from 'next/image'
 
 const items = [
   {
@@ -31,15 +37,38 @@ const items = [
     url: "/news",
   },
   {
-    title: "Profile",
-    icon: User,
+    title: "Schedule",
+    icon: CalendarCog,
     url: "/profile",
   },
   {
-    title: "Settings",
-    icon: Settings,
+    title: "Curriculum",
+    icon: ClipboardClock,
     url: "/settings",
   },
+  {
+    title: "About",
+    icon: Info,
+    url: "/settings",
+  },
+]
+
+const extras = [
+  {
+    title: "Setting",
+    icon: Settings,
+    url: "/dashboard",
+  },
+  {
+    title: "Help",
+    icon: BadgeQuestionMark,
+    url: "/news",
+  },
+  {
+    title: "Logout",
+    icon: LogOut,
+    url: "/profile",
+  }
 ]
 
 export function AppSidebar() {
@@ -51,11 +80,54 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="mb-5">
+              <div className="flex justify-end">
+                <SidebarTrigger />
+              </div>
+            </SidebarMenu>
+
+            <SidebarMenu className="mb-5">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logo.png"
+                  alt="logo"
+                  width={40}
+                  height={40}
+                />
+                {state !== "collapsed" && (
+                  <h1 className="font-bold text-lg">
+                    Study<span className="text-primary">Sphare</span>
+                  </h1>
+                )}
+              </div>
+            </SidebarMenu>
+
+            <SidebarMenu className="mt-5">
+              {state !== "collapsed" && (
+                <p className="text-sm text-gray-600 pl-2">Menu</p>
+              )}
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <a href={item.url} className="text-gray-600">
+                      <item.icon />
+                      {state !== "collapsed" && (
+                        <span>{item.title}</span>
+                      )}
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+
+            <SidebarMenu className="mt-5">
+              {state !== "collapsed" && (
+                <p className="text-sm text-gray-600 pl-2">General</p>
+              )}
+              {extras.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url} className="text-gray-600">
                       <item.icon />
                       {state !== "collapsed" && (
                         <span>{item.title}</span>
