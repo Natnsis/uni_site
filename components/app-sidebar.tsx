@@ -16,7 +16,6 @@ import {
   LayoutDashboard,
   Newspaper,
   Settings,
-  User,
   CalendarCog,
   ClipboardClock,
   Info,
@@ -39,17 +38,17 @@ const items = [
   {
     title: "Schedule",
     icon: CalendarCog,
-    url: "/profile",
+    url: "/schedule",
   },
   {
     title: "Curriculum",
     icon: ClipboardClock,
-    url: "/settings",
+    url: "/curriculum",
   },
   {
     title: "About",
     icon: Info,
-    url: "/settings",
+    url: "/about",
   },
 ]
 
@@ -57,17 +56,16 @@ const extras = [
   {
     title: "Setting",
     icon: Settings,
-    url: "/dashboard",
+    url: "/setting",
   },
   {
     title: "Help",
     icon: BadgeQuestionMark,
-    url: "/news",
+    url: "/help",
   },
   {
     title: "Logout",
     icon: LogOut,
-    url: "/profile",
   }
 ]
 
@@ -103,7 +101,6 @@ export function AppSidebar() {
                     </h1>
                   )}
 
-                  {/* Trigger on right when expanded */}
                   {state !== "collapsed" && (
                     <div className="ml-auto">
                       <SidebarTrigger />

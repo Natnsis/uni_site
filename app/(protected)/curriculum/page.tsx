@@ -1,6 +1,8 @@
 const page = () => {
   return (
-    <div></div>
+    <main className="h-screen p-5">
+      curriculum
+    </main>
   )
 }
 

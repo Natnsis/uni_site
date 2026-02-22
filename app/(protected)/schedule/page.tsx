@@ -1,6 +1,8 @@
 const page = () => {
   return (
-    <div>hehe</div>
+    <main className="h-screen p-5">
+      schedule
+    </main>
   )
 }
 
