@@ -98,7 +98,7 @@ const page = () => {
         Create, publish, and manage official announcements and updates for all students.
       </p>
       <NewsFilter />
-      <div className="my-5 flex-1 overflow-auto">
+      <div className="my-5 flex-1 overflow-auto hide-scrollbar">
         {newsArray.map((m, index) => (
           <div className="flex justify-between gap-5" key={index}>
             <div className='w-1/7'>
