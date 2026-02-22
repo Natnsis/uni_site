@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Trash2, Pencil } from 'lucide-react';
-import NewsCount from '@/components/NewsCount';
+import { EllipsisVertical } from 'lucide-react';
+import NewsFilter from '@/components/NewsFilter';
 
 const page = () => {
   const newsArray = [
@@ -92,13 +92,13 @@ const page = () => {
   ]
 
   return (
-    <main className="h-screen p-5">
+    <main className="h-screen flex flex-col p-5  pb-0">
       <h1 className="text-2xl font-bold">News Management</h1>
       <p className="text-xs">
         Create, publish, and manage official announcements and updates for all students.
       </p>
-      <NewsCount />
-      <div className="my-5 h-[70%] overflow-auto">
+      <NewsFilter />
+      <div className="my-5 flex-1 overflow-auto">
         {newsArray.map((m, index) => (
           <div className="flex justify-between gap-5" key={index}>
             <div className='w-1/7'>
@@ -126,11 +126,8 @@ const page = () => {
               />
             </div>
             <div className='flex items-center justify-center gap-1'>
-              <Button>
-                <Pencil />
-              </Button>
-              <Button variant="destructive">
-                <Trash2 />
+              <Button variant="outline">
+                <EllipsisVertical />
               </Button>
             </div>
           </div>
