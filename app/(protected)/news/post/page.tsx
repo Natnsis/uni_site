@@ -1,4 +1,5 @@
 'use client'
+
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,12 +15,6 @@ import { Button } from "@/components/ui/button";
 import { useState } from 'react'
 
 const page = () => {
-  const [fileName, setFileName] = useState("No file chosen");
-  const handleFileChange = (e) => {
-    if (e.target.files.length > 0) {
-      setFileName(e.target.files[0].name);
-    }
-  };
   return (
     <section className="h-screen flex items-center justify-center">
       <div
@@ -28,68 +23,61 @@ const page = () => {
         <h1 className="font-bold text-lg">
           Post News
         </h1>
-        <div className="w-full bg-white p-3 rounded  mt-2 rounded-lg">
-          <div>
-            <Label className="">
-              Title
-            </Label>
-            <Input />
-
-            <Label className="mt-5">
-              Description
-            </Label>
-            <Textarea />
-            <div className="mt-5 flex gap-5">
-              <div>
-                <Label>Post category</Label>
-                <Select>
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Theme" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value="light">Light</SelectItem>
-                      <SelectItem value="dark">Dark</SelectItem>
-                      <SelectItem value="system">System</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label>Post category</Label>
-                <Select>
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Theme" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value="light">Light</SelectItem>
-                      <SelectItem value="dark">Dark</SelectItem>
-                      <SelectItem value="system">System</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-            <Label className="mt-5">
-              Image
-            </Label>
+        <div className="flex gap-5">
+          <div className="w-full bg-white p-3 rounded  mt-2 rounded-lg">
             <div>
-              <Label
-                htmlFor="picture"
-                className="mt-1 p-2 rounded-lg bg-primary w-fit text-white"
-              >
-                Upload Image
+              <Label className="text-sm mb-1">
+                Title
               </Label>
-              <Input
-                type="file"
-                id="picture" className="hidden"
-                onChange={handleFileChange}
-              />
-              <span className="text-sm text-gray-600">{fileName}</span>
+              <Input className="w-50" />
+
+              <Label className="text-sm mb-1 mt-3">
+                Description
+              </Label>
+              <Textarea className="w-full h-40" />
             </div>
+          </div>
+
+          <div className="w-full bg-white p-3 rounded  mt-2 rounded-lg">
+            <div>
+              <Label className="text-sm mb-1">
+                Category
+              </Label>
+              < Select >
+                <SelectTrigger className="w-[180px]" >
+                  <SelectValue placeholder="Theme" />
+                </SelectTrigger>
+                < SelectContent >
+                  <SelectGroup>
+                    <SelectItem value="light" > Light </SelectItem>
+                    < SelectItem value="dark" > Dark </SelectItem>
+                    < SelectItem value="system" > System </SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="mt-5">
+              <Label className="text-sm mb-1">
+                Status
+              </Label>
+              < Select >
+                <SelectTrigger className="w-[180px]" >
+                  <SelectValue placeholder="Theme" />
+                </SelectTrigger>
+                < SelectContent >
+                  <SelectGroup>
+                    <SelectItem value="light" > Light </SelectItem>
+                    < SelectItem value="dark" > Dark </SelectItem>
+                    < SelectItem value="system" > System </SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          <div className="w-full bg-white p-3 rounded  mt-2 rounded-lg flex items-center justify-center">
+            image
           </div>
         </div>
         <div className="mt-5 flex justify-end gap-3">
