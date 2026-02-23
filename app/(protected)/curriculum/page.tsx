@@ -1,13 +1,17 @@
+'use client'
 import {
   NativeSelect,
   NativeSelectOption,
 } from "@/components/ui/native-select";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Pencil } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { Button } from '@/components/ui/button';
+import { useRouter } from "next/navigation";
 
 const page = () => {
+  const router = useRouter();
+
   const curriculum = [
     // Year 1: Common Freshman Courses (all departments)
     {
@@ -358,8 +362,11 @@ const page = () => {
 
               {/* Action Button */}
               <div className="flex justify-end mt-4">
-                <Button className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
-                  <Pencil className="w-4 h-4 text-gray-700 dark:text-gray-200" />
+                <Button
+                  onClick={() => router.push(`/curriculum/${c.year}`)}
+                  className="p-2 rounded-full transition-colors"
+                >
+                  <MoveRight className="w-4 h-4 text-white" />
                 </Button>
               </div>
             </div>
