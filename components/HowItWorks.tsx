@@ -1,5 +1,4 @@
 import { howArray } from '@/constants/howItWorks';
-import { Cog, Group, Hourglass } from 'lucide-react'
 
 import Image from 'next/image';
 const HowItWorks = () => {
