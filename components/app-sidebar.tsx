@@ -46,9 +46,9 @@ const items = [
     url: "/curriculum",
   },
   {
-    title: "About",
+    title: "Criticism",
     icon: Info,
-    url: "/about",
+    url: "/criticism",
   },
 ]
 

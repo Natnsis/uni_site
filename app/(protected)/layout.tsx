@@ -3,7 +3,7 @@ import { AppSidebar } from "@/components/app-sidebar"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       <AppSidebar />
       <main className="flex-1">
         {children}
