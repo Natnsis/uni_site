@@ -27,11 +27,17 @@ const Header = () => {
 
         <div className="flex gap-5">
           <Button
-            variant="ghost"
-            onClick={() => router.push('/login')}
+            variant="secondary"
           >
-            Login
+            Get the app
           </Button>
+
+          <Button
+            variant="outline"
+          >
+            Give a star
+          </Button>
+
           <Button
             onClick={() => router.push('/login')}
           >
