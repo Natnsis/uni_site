@@ -3,11 +3,21 @@ import {
   NativeSelect,
   NativeSelectOption,
 } from "@/components/ui/native-select";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Plus } from "lucide-react";
 import { Button } from '@/components/ui/button';
 import { useRouter } from "next/navigation";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const page = () => {
   const router = useRouter();
@@ -330,6 +340,40 @@ const page = () => {
           <div className="w-full">
             <p className="text-sm mb-1 text-primary">Search</p>
             <Input placeholder="data structures and algorithm..." className="bg-white" />
+          </div>
+          <div className="flex items-end h-full">
+            <Dialog>
+              <DialogTrigger>
+                <Badge className="p-3">
+                  <Plus />  Add new
+                </Badge>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Add a curriculum year</DialogTitle>
+                  <DialogDescription>
+                    Design and organize academic courses by year and semester.
+                  </DialogDescription>
+                </DialogHeader>
+                <div>
+                  <Label className="mb-1">Curriculum Name</Label>
+                  <Input placeholder="e.g. Computer Science Curriculum" className="mb-3" />
+                  <Label className="mb-1">Department / Field</Label>
+                  <Input placeholder="e.g. Engineering" className="mb-3" />
+                  <Label className="mb-1">Academic Year</Label>
+                  <Input placeholder="e.g. 1st Year" className="mb-3" />
+                  <Label className="mb-1">Number of Semesters</Label>
+                  <Input placeholder="e.g. 2" className="mb-3" />
+                  <Label className="mb-1">Description</Label>
+                  <Textarea
+                    placeholder="Brief description about this curriculum..."
+                    className="mb-3" />
+                  <div className="flex justify-end">
+                    <Button>Submit</Button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
