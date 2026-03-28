@@ -15,18 +15,12 @@ const Header = () => {
       </nav>
 
       <div className="flex gap-4">
-        <Button
-          variant="outline"
-          className="px-3 rounded-sm py-0.5"
-        >
+        <Button variant="outline" className="px-3 rounded-sm py-0.5">
           <HugeiconsIcon icon={PhoneArrowDownIcon} />
           Get App
         </Button>
 
-        <Button
-          variant="ghost">
-          Sign in
-        </Button>
+        <Button variant="ghost">Sign in</Button>
       </div>
     </header>
   );
