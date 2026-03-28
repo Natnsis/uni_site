@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between bg-white py-3 px-6 border-b">
+    <header className="flex items-center justify-between bg-white py-3 px-6 border-b sticky top-0">
       <h1>Logo</h1>
 
       <nav className="flex gap-5">
