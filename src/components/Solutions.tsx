@@ -16,7 +16,7 @@ const Solutions = () => {
         </h1>
       </div>
 
-      <div className="flex justify-between px-20 mt-5 gap-5">
+      <div className="flex justify-between px-20 mt-10 gap-5">
         <Card>
           <CardContent>
             <HugeiconsIcon
@@ -60,7 +60,7 @@ const Solutions = () => {
         </Card>
       </div>
 
-      <div className="flex justify-center h-[80vh] mt-20">
+      <div className="flex justify-center h-[80vh] mt-10">
         <img src="/hero.png" className="w-[80vw]" alt="show-img" />
       </div>
     </section>

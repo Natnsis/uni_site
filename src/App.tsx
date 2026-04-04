@@ -2,6 +2,7 @@ import Features from "./components/Features";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Solutions from "./components/Solutions";
+import Testimonials from "./components/Testimonials";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Hero />
       <Solutions />
       <Features />
+      <Testimonials />
     </div>
   );
 };
