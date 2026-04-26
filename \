@@ -1,0 +1,47 @@
+import { Button } from './../components/ui/button.tsx'
+import {ModeToggle} from './../components/mode-toggle.tsx'
+
+const Landing = () => {
+  return (
+    <main>
+      <header className='flex justify-between items-center h-15 border-b-1 px-10'>
+        <h1 className='text-primary font-bold text-2xl'>UniCore</h1>
+
+        <nav className='flex gap-5'>
+        <a className='hover:underline hover:text-primary hover:cursor-pointer'>Features</a>  
+        <a className='hover:underline hover:text-primary hover:cursor-pointer'>Campus Life</a>  
+        <a className='hover:underline hover:text-primary hover:cursor-pointer'>Testimonials</a>  
+        <a className='hover:underline hover:text-primary hover:cursor-pointer'>Supports</a>  
+        </nav>
+
+        <div className='flex items-center gap-3'>
+          <ModeToggle/>
+          <Button>Download App</Button>
+          <Button>Sign In</Button>
+        </div>
+      </header>
+      
+      {/* hero */}
+      <section className='h-[70vh] bg-primary p-20 flex items-center justify-center'>
+        <div className='flex justify-between gap-10'>
+          <div className='w-[40vw] h-[50vh] bg-white flex flex-col items-center justify-center'>
+            <div>
+              <h1 className='text-4xl'>Your Entire Campus,</h1>
+              <h1>In Your Pocket.</h1>
+            </div>
+            <p>Stay organized with intuitive schedules. find the perfect study lounge in real-time. and never miss a campus event. Designed for the modern student.</p>
+            <div>
+              <Button className='rounded-full'>downlaod for android</Button>
+              <Button className='rounded-full'>Login as Admin</Button>
+            </div>
+          </div>
+
+          <div className='w-[40vw] h-[50vh] bg-white'>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+export default Landing
