@@ -15,8 +15,10 @@ import {
   StarIcon,
   TicketIcon,
 } from "@phosphor-icons/react"
+import { useRouter } from "next/navigation"
 
 export default function Page() {
+  const router = useRouter()
   return (
     <main>
       {/*header section*/}
@@ -24,7 +26,7 @@ export default function Page() {
         <Link href="#">
           <h1 className="text-2xl font-bold text-primary">UniCore</h1>
         </Link>
-        <nav className="flex gap-4">
+        <nav className="flex gap-6">
           <Link href="#" className="hover:text-primary hover:underline">
             Features
           </Link>
@@ -44,7 +46,7 @@ export default function Page() {
             <DeviceMobileCameraIcon size={32} />
             Download App
           </Button>
-          <Button>
+          <Button onClick={() => router.push("/auth/login")}>
             Login
             <SignInIcon size={32} />
           </Button>
@@ -297,7 +299,10 @@ export default function Page() {
               </div>
 
               <div className="flex gap-5">
-                <Button variant="outline" className="rounded-full text-primary">
+                <Button
+                  variant="outline"
+                  className="rounded-full text-primary dark:text-white"
+                >
                   Create Your Account
                 </Button>
                 <Button className="rounded-full border-white">
@@ -314,7 +319,7 @@ export default function Page() {
           <h1 className="text-xl font-bold text-primary">UniCore</h1>
           <p>&copy; {new Date().getFullYear()} UniCore. All rights reserved.</p>
         </div>
-        <div>
+        <div className="flex gap-5 text-sm">
           <Link href="/">Privacy Policy</Link>
           <Link href="/">Terms of Service</Link>
           <Link href="/">Cookie Policy</Link>
