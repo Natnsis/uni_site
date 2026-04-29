@@ -10,6 +10,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar"
 import {
   BellIcon,
@@ -28,6 +29,7 @@ import { useRouter } from "next/navigation"
 
 export function AppSidebar() {
   const route = useRouter()
+  const { state } = useSidebar()
 
   const contents = [
     {
@@ -84,10 +86,11 @@ export function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader>
-        <div className="flex items-center gap-2 p-2">
-          <GraduationCapIcon size={25} /> Uni-Core
-        </div>
+      <SidebarHeader className="flex flex-row items-center gap-2">
+        <GraduationCapIcon size={25} className="shrink-0" />
+        {state === "expanded" && (
+          <span className="truncate font-semibold">Uni-Core</span>
+        )}
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -112,10 +115,8 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton tooltip="Logout">
-              <Button>
-                Logout
-                <SignOutIcon />
-              </Button>
+              <SignOutIcon />
+              Logout
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
