@@ -137,7 +137,7 @@ export default function Page() {
       </section>
 
       {/*testimonials section*/}
-      <section className="mt-20">
+      <section className="mt-[20vh]">
         <div className="mx-20 flex gap-20">
           <div className="flex w-[45vw] flex-col gap-3 rounded-[25px] bg-secondary p-5">
             <h1 className="text-4xl">Connected Campus Ecosystem</h1>
