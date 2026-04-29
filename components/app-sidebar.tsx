@@ -1,4 +1,5 @@
 "use client"
+import { Button } from "./ui/button"
 
 import {
   Sidebar,
@@ -19,6 +20,7 @@ import {
   GearIcon,
   GraduationCapIcon,
   HouseLineIcon,
+  SignOutIcon,
   UsersIcon,
   WarningIcon,
 } from "@phosphor-icons/react"
@@ -82,14 +84,9 @@ export function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="border-b p-4 font-bold group-data-[collapsible=icon]:p-2">
-        <div className="flex items-center gap-2">
-          <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground group-data-[collapsible=icon]:size-6">
-            U
-          </div>
-          <span className="truncate group-data-[collapsible=icon]:hidden">
-            University
-          </span>
+      <SidebarHeader>
+        <div className="flex items-center gap-2 p-2">
+          <GraduationCapIcon size={25} /> Uni-Core
         </div>
       </SidebarHeader>
       <SidebarContent>
@@ -115,10 +112,10 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton tooltip="Logout">
-              <div className="flex size-6 shrink-0 items-center justify-center rounded-md border bg-background text-[10px] font-medium text-muted-foreground group-data-[collapsible=icon]:size-4">
-                L
-              </div>
-              <span>Logout</span>
+              <Button>
+                Logout
+                <SignOutIcon />
+              </Button>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
