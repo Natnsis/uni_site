@@ -5,8 +5,10 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ArrowRightIcon, BarcodeIcon, CalendarBlankIcon, CubeTransparentIcon, DropboxLogoIcon, EnvelopeSimpleIcon, FacebookLogo, FacebookLogoIcon, GraduationCapIcon, InstagramLogoIcon, LightningIcon, LinkedinLogoIcon, PhoneOutgoingIcon, ShieldStarIcon, StudentIcon, SunIcon, TelegramLogoIcon, XLogoIcon, YoutubeLogoIcon } from "@phosphor-icons/react"
+import { useRouter } from "next/navigation"
 
 const Landing = () => {
+  const router = useRouter();
   return (
     <main>
       <section className="bg-grid-fade min-h-screen">
@@ -24,7 +26,7 @@ const Landing = () => {
           <div className="flex items-center gap-5">
             <Button size='icon'><SunIcon size={32} /></Button>
             <Button>Downlaod App</Button>
-            <Button>Login</Button>
+            <Button onClick={() => router.push('/auth/login')}>Login</Button>
           </div>
         </header>
 
