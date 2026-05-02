@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation"
 const Landing = () => {
   const router = useRouter();
   return (
-    <main>
+    <div>
       <section className="bg-grid-fade min-h-screen">
         <header className="flex justify-between px-20 py-5 items-center">
           <div className="flex gap-20 items-center">
@@ -26,7 +26,7 @@ const Landing = () => {
           <div className="flex items-center gap-5">
             <Button size='icon'><SunIcon size={32} /></Button>
             <Button>Downlaod App</Button>
-            <Button onClick={() => router.push('/auth/login')}>Login</Button>
+            <Button onClick={() => router.push('/login')}>Login</Button>
           </div>
         </header>
 
@@ -348,7 +348,7 @@ const Landing = () => {
         </div>
       </footer>
 
-    </main >
+    </div >
   )
 }
 
