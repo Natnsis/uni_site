@@ -37,7 +37,6 @@
   width: 100%;
   min-height: 100vh;
   background-color: var(--background);
-  /* Subtly pulls in the foreground color for a professional top-down depth */
   background-image: radial-gradient(
     125% 125% at 50% 10%, 
     var(--background) 40%, 
