@@ -4,6 +4,10 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@source "../app";
+@source "../components";
+@source "../lib";
+
 @custom-variant dark (&:is(.dark *));
 
 .bg-grid-fade {
