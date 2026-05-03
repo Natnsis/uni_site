@@ -101,11 +101,6 @@
   inset: 0;
   z-index: 0;
   
-  /* --- ADJUST LINE INTENSITY HERE --- */
-  /* Level 1 (Faint): oklch(from var(--border) l c h / 0.15) */
-  /* Level 2 (Medium): oklch(from var(--border) l c h / 0.4)  <-- TRY THIS */
-  /* Level 3 (Strong): var(--border) */
-  
   background-image: 
     linear-gradient(to right, oklch(from var(--border) l c h / 0.4) 1.5px, transparent 1.5px),
     linear-gradient(to bottom, oklch(from var(--border) l c h / 0.4) 1.5px, transparent 1.5px);
