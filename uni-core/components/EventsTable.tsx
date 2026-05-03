@@ -22,7 +22,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-const StudentsTable = () => {
+const EventsTable = () => {
   const tableData = [
     { id: "ASU-032", name: "Natnael Sisay", date: "Oct 22 2025", status: "Active", invitations: "243", right: "Class Representative" },
     { id: "ASU-033", name: "Bethlehem Tekle", date: "Oct 23 2025", status: "Active", invitations: "120", right: "Student" },
@@ -69,16 +69,10 @@ const StudentsTable = () => {
   return (
     <div>
       <div className="mt-5 flex justify-between">
-        <div className="flex gap-3">
-          <Button>All</Button>
-          <Button variant='ghost'>Incomplete</Button>
-          <Button variant='ghost'>Overdue</Button>
-          <Button variant='ghost'>Ongoing</Button>
-          <Button variant='ghost'>Finished</Button>
-        </div>
-
-        <div className="flex gap-3 items-center">
+        <div className="w-[40vw]">
           <Input className="border-2" placeholder="search for student..." />
+        </div>
+        <div className="flex gap-3 items-center">
 
           <div className="flex gap-2 items-center">
             <p className="text-xs">Status:</p>
@@ -144,4 +138,4 @@ const StudentsTable = () => {
   )
 }
 
-export default StudentsTable
+export default EventsTable

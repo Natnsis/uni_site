@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 
 const UniRootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <main>
+    <main className="h-screen overflow-y-auto">
       <UniHeader />
       {children}
     </main>

@@ -12,15 +12,9 @@ const UniHeader = () => {
       name: 'Dashboard',
       link: '/uni-admin',
     },
-
     {
       name: 'Students',
       link: '/uni-admin/students',
-    },
-
-    {
-      name: 'Facaulty',
-      link: '/uni-admin/facaulty',
     },
     {
       name: 'Events',
@@ -34,7 +28,6 @@ const UniHeader = () => {
       name: 'Complaits',
       link: '/uni-admin/complaints',
     },
-
     {
       name: 'Reports',
       link: '/uni-admin/reports',
@@ -54,7 +47,7 @@ const UniHeader = () => {
   ]
 
   return (
-    <header className="flex justify-between p-5">
+    <header className="flex justify-between px-5 py-4 sticky top-0 bg-background z-1">
       <h1 className="text-xl font-bold">UniCore</h1>
       <div className="flex gap-2 items-center">
         <div className="flex bg-secondary p-0.5 px-3 border gap-5">
