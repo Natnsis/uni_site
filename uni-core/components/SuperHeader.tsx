@@ -1,56 +1,43 @@
-
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { BellIcon, CalendarBlankIcon, ClockIcon, GearIcon, SignOutIcon, UserIcon } from "@phosphor-icons/react"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { BellIcon, SignOutIcon, UserIcon } from "@phosphor-icons/react"
+import { useRouter, usePathname } from "next/navigation"
 
 const SuperHeader = () => {
   const router = useRouter();
-  const [activeUrl, setActiveUrl] = useState('overview');
+  const pathname = usePathname();
+
   const superAdminUrls = [
     {
       name: 'Platform Overview',
       link: '/super-admin',
-      key: 'overview'
     },
     {
       name: 'Universities',
       link: '/super-admin/universities',
-      key: 'universities'
     },
     {
       name: 'Total Students',
       link: '/super-admin/students',
-      key: 'students'
     },
     {
       name: 'Revenue Overview',
       link: '/super-admin/revenue',
-      key: 'revenue'
     },
     {
       name: 'Active Subscriptions',
       link: '/super-admin/subscriptions',
-      key: 'subscriptions'
     },
     {
       name: 'System Health',
       link: '/super-admin/health',
-      key: 'health'
     },
     {
       name: 'Recent Activity Logs',
       link: '/super-admin/recent-activity',
-      key: 'recent-activity'
     },
   ]
-
-  const navigate = (link: string, key: string) => {
-    setActiveUrl(key);
-    router.push(link);
-  }
 
   return (
     <header className="flex justify-between p-5">
@@ -60,8 +47,8 @@ const SuperHeader = () => {
           {superAdminUrls.map((u, index) => (
             <Button
               key={index}
-              onClick={() => navigate(u.link, u.key)}
-              variant={activeUrl === u.key ? 'default' : 'ghost'}
+              onClick={() => router.push(u.link)}
+              variant={pathname === u.link ? 'default' : 'ghost'}
             >
               {u.name}
             </Button>
