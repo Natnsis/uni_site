@@ -1,6 +1,8 @@
+import ScheduleTable from "@/components/ScheduleTable"
+
 const page = () => {
   return (
-    <div>thehe</div>
+    <div><ScheduleTable /></div>
   )
 }
 
