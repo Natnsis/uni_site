@@ -145,10 +145,10 @@ const ScheduleTable = () => {
 
         <TableBody>
           {foodSchedule.map((f, index) => (
-            <TableRow>
+            <TableRow key={index}>
               <TableCell className="border-x p-10 text-center">{f.day}</TableCell>
               {f.food.map((ff, index) => (
-                <TableCell className="border-x p-10 text-center">
+                <TableCell className="border-x p-10 text-center" key={index}>
                   <div className="mb-5">
                     <h1 className="text-xl">{ff.title}</h1>
                     <p className="text-center font-light">{ff.time}</p>
