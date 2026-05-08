@@ -1,6 +1,6 @@
 const Revenue = () => {
   return (
-    <div>revenue</div>
+    <div className="px-5">revenue</div>
   )
 }
 

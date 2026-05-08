@@ -1,6 +1,12 @@
+'use client'
+
+import UniversitiesTable from "@/components/UniversitiesTable"
+
 const Universities = () => {
   return (
-    <div>hehe</div>
+    <div className="px-5">
+      <UniversitiesTable/>
+    </div>
   )
 }
 

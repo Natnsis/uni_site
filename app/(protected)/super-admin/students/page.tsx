@@ -1,6 +1,10 @@
+import StudentsTable from "@/components/StudentsTable"
+
 const Students = () => {
   return (
-    <div>studnets</div>
+    <div className="px-5">
+      <StudentsTable />
+    </div>
   )
 }
 
