@@ -70,7 +70,7 @@ const page = () => {
                 </div>
               </DrawerHeader>
               <DrawerFooter>
-                <DrawerClose className='bg-black text-white py-2 font-bold'>
+                <DrawerClose className='bg-primary text-primary-foreground py-2 font-bold rounded-md'>
                   Close
                 </DrawerClose>
               </DrawerFooter>

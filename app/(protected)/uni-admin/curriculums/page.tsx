@@ -70,7 +70,7 @@ const page = () => {
     <div className="px-5">
       <div className="flex justify-between">
         <div className="flex gap-2 items-center">
-          <p className="text-gray-600 text-sm">Select a Year: </p>
+          <p className="text-muted-foreground text-sm">Select a Year: </p>
           <div className="flex gap-2">
             <Button size='icon'>1</Button>
             <Button variant='outline' size='icon'>2</Button>

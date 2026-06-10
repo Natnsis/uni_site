@@ -33,7 +33,7 @@ const page = () => {
         <div className="flex items-center gap-10 my-10">
           <div>
             <h1 className="text-4xl">Hey, Need help? 👋</h1>
-            <p className="text-4xl text-gray-500">Just ask me anything!</p>
+            <p className="text-4xl text-muted-foreground">Just ask me anything!</p>
           </div>
           <Button variant='ghost' size='lg'><MicrophoneIcon /></Button>
         </div>

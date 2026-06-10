@@ -178,7 +178,7 @@ const Landing = () => {
           </Card>
         </div>
 
-        <div className="mt-10 border p-5 bg-gray-50 flex flex-col items-center gap-5">
+        <div className="mt-10 border p-5 bg-muted flex flex-col items-center gap-5">
           <h1 className="text-3xl">Join the unicore community today.</h1>
           <p className="w-[40vw] text-center text-sm">Contact us for any feedback of improvement ideas and more of a cool projects from the same developer.</p>
           <div className="flex gap-10">
@@ -212,7 +212,7 @@ const Landing = () => {
         </div>
 
         <div className="mt-10 flex justify-between gap-20 mb-10">
-          <div className="w-full bg-white/70">
+          <div className="w-full bg-card/70">
             <div className="bg-secondary p-5 flex flex-col items-center gap-3 border-b">
               <h1 className="text-2xl font-semibold">Smart notifications</h1>
               <p className="text-sm text-center w-[70%]">Easily accessible notificatoin from the notification center, calendar or email with the relevant activities</p>
@@ -221,22 +221,22 @@ const Landing = () => {
             <div className="flex flex-col">
               <div className="p-5">
                 <h1 className="font-bold">Email notification</h1>
-                <p className="text-sm text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
+                <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
               </div>
 
               <div className="p-5">
                 <h1 className="font-bold">Email notification</h1>
-                <p className="text-sm text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
+                <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
               </div>
 
               <div className="p-5">
                 <h1 className="font-bold">Email notification</h1>
-                <p className="text-sm text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
+                <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
               </div>
             </div>
           </div>
 
-          <div className="w-full bg-white/70">
+          <div className="w-full bg-card/70">
             <div className="bg-secondary p-5 flex flex-col items-center gap-3 border-b">
               <h1 className="text-2xl font-semibold">Smart notifications</h1>
               <p className="text-sm text-center w-[70%]">Easily accessible notificatoin from the notification center, calendar or email with the relevant activities</p>
@@ -245,17 +245,17 @@ const Landing = () => {
             <div className="flex flex-col">
               <div className="p-5">
                 <h1 className="font-bold">Email notification</h1>
-                <p className="text-sm text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
+                <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
               </div>
 
               <div className="p-5">
                 <h1 className="font-bold">Email notification</h1>
-                <p className="text-sm text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
+                <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
               </div>
 
               <div className="p-5">
                 <h1 className="font-bold">Email notification</h1>
-                <p className="text-sm text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
+                <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa </p>
               </div>
             </div>
           </div>
@@ -295,8 +295,8 @@ const Landing = () => {
         </div>
       </section>
 
-      <footer className="bg-black px-20 h-[40vh]">
-        <div className="flex justify-between text-white  pt-10">
+      <footer className="bg-foreground px-20 h-[40vh]">
+        <div className="flex justify-between text-background pt-10">
           <div className="flex flex-col gap-2">
             <h1 className="text-2xl">UniCore</h1>
             <div>
@@ -338,7 +338,7 @@ const Landing = () => {
         </div>
 
         <div className="flex justify-between mt-10">
-          <p className="text-white text-sm flex items-center">&copy; Copyright 2026 all rights reserved</p>
+          <p className="text-background text-sm flex items-center">&copy; Copyright 2026 all rights reserved</p>
           <div className="gap-3 flex">
             <Button><InstagramLogoIcon size={32} /></Button>
             <Button><LinkedinLogoIcon size={32} /></Button>

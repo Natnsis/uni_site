@@ -94,23 +94,23 @@ const page = () => {
               <div className="flex flex-col gap-2 overflow-y-auto mt-3 h-60">
                 <div>
                   <h1 className="text-sm">Roberto Ahman Person</h1>
-                  <p className="text-sm text-gray-500">has bought 3 economy class on your event</p>
+                  <p className="text-sm text-muted-foreground">has bought 3 economy class on your event</p>
                 </div>
                 <div>
                   <h1 className="text-sm">Roberto Ahman Person</h1>
-                  <p className="text-sm text-gray-500">has bought 3 economy class on your event</p>
+                  <p className="text-sm text-muted-foreground">has bought 3 economy class on your event</p>
                 </div>
                 <div>
                   <h1 className="text-sm">Roberto Ahman Person</h1>
-                  <p className="text-sm text-gray-500">has bought 3 economy class on your event</p>
+                  <p className="text-sm text-muted-foreground">has bought 3 economy class on your event</p>
                 </div>
                 <div>
                   <h1 className="text-sm">Roberto Ahman Person</h1>
-                  <p className="text-sm text-gray-500">has bought 3 economy class on your event</p>
+                  <p className="text-sm text-muted-foreground">has bought 3 economy class on your event</p>
                 </div>
                 <div className="row-span-4">
                   <h1 className="text-sm">Roberto Ahman Person</h1>
-                  <p className="text-sm text-gray-500">has bought 3 economy class on your event</p>
+                  <p className="text-sm text-muted-foreground">has bought 3 economy class on your event</p>
                 </div>
               </div>
             </div>

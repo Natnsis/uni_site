@@ -11,7 +11,7 @@ const Dashboard = () => {
       <div className="flex justify-between items-end">
         <div>
           <h1 className="text-2xl">Welcome back, Jack 👋</h1>
-          <p className="text-gray-600 text-sm">Assosa University - Admin portal</p>
+          <p className="text-muted-foreground text-sm">Assosa University - Admin portal</p>
         </div>
 
         <div className="flex gap-3 items-center">
@@ -26,7 +26,7 @@ const Dashboard = () => {
         <div className="h-35 w-full border flex flex-col justify-between p-5">
           <p className="text-sm font-light">Total Enrollment</p>
           <h1 className="text-4xl font-bold">12,482</h1>
-          <div className="flex gap-2 items-center text-green-400 text-sm">
+          <div className="flex gap-2 items-center text-primary text-sm">
             <TrendUpIcon /> <p>+8.4% from last sem</p>
           </div>
         </div>
@@ -34,7 +34,7 @@ const Dashboard = () => {
         <div className="h-35 w-full border flex flex-col justify-between p-5">
           <p className="text-sm font-light">Avg.Attendance</p>
           <h1 className="text-4xl font-bold">94.2%</h1>
-          <div className="flex gap-2 items-center text-indigo-400 text-sm">
+          <div className="flex gap-2 items-center text-accent text-sm">
             <CheckCircleIcon /> <p>Stable Prformance</p>
           </div>
         </div>
@@ -42,7 +42,7 @@ const Dashboard = () => {
         <div className="h-35 w-full border flex flex-col justify-between p-5">
           <p className="text-sm font-light">Research Output</p>
           <h1 className="text-4xl font-bold">342</h1>
-          <div className="flex gap-2 items-center text-green-400 text-sm">
+          <div className="flex gap-2 items-center text-primary text-sm">
             <ArrowUpIcon /> <p>12 new publication</p>
           </div>
         </div>
@@ -50,7 +50,7 @@ const Dashboard = () => {
         <div className="h-35 w-full border flex flex-col justify-between p-5">
           <p className="text-sm font-light">Financial Health</p>
           <h1 className="text-4xl font-bold">$4.2M</h1>
-          <div className="flex gap-2 items-center text-brown-200 text-sm">
+          <div className="flex gap-2 items-center text-muted-foreground text-sm">
             <WarningIcon /> <p>Grand renewals pending</p>
           </div>
         </div>
