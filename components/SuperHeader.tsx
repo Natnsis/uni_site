@@ -43,7 +43,7 @@ const SuperHeader = () => {
     <header className="flex justify-between p-5">
       <h1 className="text-xl font-bold">UniCore</h1>
       <div className="flex gap-2 items-center">
-        <div className="flex bg-secondary p-0.5 px-3 border gap-5">
+        <div className="flex p-0.5 px-3 gap-5">
           {superAdminUrls.map((u, index) => (
             <Button
               key={index}

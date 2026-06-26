@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 const Login = () => {
   const router = useRouter()
   return (
-    <main className="bg-grid-fade flex items-center justify-center">
+    <main className="h-screen flex items-center justify-center">
       <div className="p-5 h-[40vh] w-[80vw] flex gap-20 items-center justify-center">
         <form action="" className='bg-background p-5 rounded-lg w-[35vw] border'>
           <div className='flex flex-col mb-4 items-center'>

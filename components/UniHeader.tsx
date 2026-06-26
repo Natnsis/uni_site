@@ -1,6 +1,6 @@
 'use client'
 import { Button } from "@/components/ui/button"
-import { BellIcon, CalendarBlankIcon, ClockIcon, GearIcon, SignOutIcon, UserIcon } from "@phosphor-icons/react"
+import { BellIcon,  SignOutIcon, UserIcon } from "@phosphor-icons/react"
 import { useRouter, usePathname } from "next/navigation"
 
 const UniHeader = () => {
@@ -50,7 +50,7 @@ const UniHeader = () => {
     <header className="flex justify-between px-5 py-4 sticky top-0 bg-background z-1">
       <h1 className="text-xl font-bold">UniCore</h1>
       <div className="flex gap-2 items-center">
-        <div className="flex bg-secondary p-0.5 px-3 border gap-5">
+        <div className="flex p-0.5 px-3 gap-5">
           {UniAdminUrls.map((u, index) => (
             <Button
               key={index}
